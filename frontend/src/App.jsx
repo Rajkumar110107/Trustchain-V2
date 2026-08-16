@@ -4,6 +4,7 @@ import { Shield, Loader2, Upload, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 import UploadBox from './components/UploadBox';
 import Tabs from './components/Tabs';
+import { API_BASE_URL } from './config';
 
 function App() {
   const [file, setFile] = useState(null);
@@ -34,7 +35,8 @@ function App() {
     formData.append('lang', selectedLanguage);
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/analyze', formData, {
+      const response = await axios.post(`${API_BASE_URL}/analyze`, formData, {
+
         headers: {
           'Content-Type': 'multipart/form-data',
         },
