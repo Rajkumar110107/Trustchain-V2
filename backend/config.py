@@ -10,7 +10,8 @@ load_dotenv(dotenv_path=env_path)
 class Settings:
     PORT: int = int(os.getenv("PORT", 8000))
     HOST: str = os.getenv("HOST", "127.0.0.1")
-    CORS_ORIGINS: list = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",")
+    CORS_ORIGINS: list = os.getenv("CORS_ORIGINS", "https://trustchain-v2-murex.vercel.app,http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000").split(",")
+
     
     # Blockchain Settings
     RPC_URL: str = os.getenv("RPC_URL", "http://127.0.0.1:8545")
